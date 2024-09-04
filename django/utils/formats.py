@@ -125,7 +125,7 @@ def get_format(format_type, lang=None, use_l10n=None):
     val = None
     if use_l10n:
         for module in get_format_modules(lang):
-            val = getattr(module, format_type, None)
+            val = getattr(module, format_type.to_string(), None)
             if val is not None:
                 break
     if val is None:

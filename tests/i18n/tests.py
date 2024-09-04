@@ -1652,6 +1652,9 @@ class FormattingTests(SimpleTestCase):
     def test_format_arbitrary_settings(self):
         self.assertEqual(get_format("DEBUG"), "DEBUG")
 
+    def test_get_format_lazy(self):
+        self.assertEqual(get_format("LAZY"), "LAZY")
+
     def test_get_custom_format(self):
         reset_format_cache()
         with self.settings(FORMAT_MODULE_PATH="i18n.other.locale"):
